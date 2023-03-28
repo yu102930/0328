@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inner {
+            color: aqua;
+        }
+
+        .redFont {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<button id="btnGo">Go</button>
+<button id="btnClear">Clear</button>
+<button id="btnRnd">亂數</button>
+
+<div>
+    <ul id="pool">
+    </ul>
+</div>
+
+<h2>Greetings</h2>
+<div class="container">
+    <div class="inner">Hello</div>
+    <img src="https://s.yimg.com/ny/api/res/1.2/8mj_DmBctBS1Akvl4R_1dg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2022-06/3757bb00-eca8-11ec-bf3f-7c2b69f1b53a">
+    <div class="inner">Goodbye</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnGo").click(onBtnGoClick);
+        $("#btnClear").click(onBtnClearClick);
+        $("#btnRnd").click(onBtnRndClick);
+    });
+
+    $(function () {
+        console.log("ready!");
+        $(".inner").append("<p class='redFont'>Test</p>");
+    });
+
+
+    var num = 0;
+    function onBtnGoClick() {
+        num++;
+        $("#pool").append("<li>"+num+"</li>")
+    };
+    var num = 0;
+    function onBtnClearClick() {
+        num++;
+        $("#pool").empty()
+    };
+    function onBtnRndClick() {
+        let x = (Math.floor(Math.random()*100));
+        console.log(x);
+    };
+
+</script>
+
+
+</body>
+</html>
